@@ -26,7 +26,9 @@ To set password options for John.
 
 You can also view the passwd options in /etc/shadow. You can see if the user account is locked out. The second field is the password hash. If the password hash starts with **!** The user account is locked out.
 \
+\
 ![The shadow file](pictures/shadow.png)
+\
 \
 If you want to transfer a password from another server to the next one, simply copy the password hash in /etc/shadow from the server with the correct password and paste it into field number 2.
 \
@@ -47,19 +49,15 @@ See currently logged in users.
 ``w`` or ``who``.
 \
 \
-To edit /etc/passwd use vipw. Do not edit the file directly.
-
-/etc/profile: Used for default settings for all users when starting a login shell
-
-/etc/bashrc: Used to define defaults for all users when starting a subshell
-
-~/.profile: Specific settings for one user applied when starting a login shell
-
-~/.bashrc: Specific settings for one user applied when starting a subshell
-
-Move password from old shadow to new shadow file.
-
-First create the new user and give him a tmp password. Copy the old hash from the old shadow file to the new one.
+To edit /etc/passwd use ``vipw``. Do not edit the file directly.
+\
+**/etc/profile**: Used for default settings for all users when starting a login shell
+\
+**/etc/bashrc**: Used to define defaults for all users when starting a subshell
+\
+**~/.profile**: Specific settings for one user applied when starting a login shell
+\
+**~/.bashrc**: Specific settings for one user applied when starting a subshell
 
 ## Groups
 
