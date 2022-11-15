@@ -46,21 +46,19 @@ See currently logged in users.
 ``w`` or ``who``.
 \
 \
-To edit /etc/passwd use vipw. Do not edit the file directly.   
-\
-\
-/etc/profile: Used for default settings for all users when starting a login shell  
+To edit /etc/passwd use vipw. Do not edit the file directly.
 
-/etc/bashrc: Used to define defaults for all users when starting a subshell  
+/etc/profile: Used for default settings for all users when starting a login shell
 
-~/.profile: Specific settings for one user applied when starting a login shell  
+/etc/bashrc: Used to define defaults for all users when starting a subshell
 
-~/.bashrc: Specific settings for one user applied when starting a subshell 
+~/.profile: Specific settings for one user applied when starting a login shell
 
-Move password from old shadow to new shadow file. 
+~/.bashrc: Specific settings for one user applied when starting a subshell
 
--   First create the new user and give him a tmp password. Copy the old hash from the old shadow file to the new one. 
-    
+Move password from old shadow to new shadow file.
+
+First create the new user and give him a tmp password. Copy the old hash from the old shadow file to the new one.
 
 ## Groups
 
