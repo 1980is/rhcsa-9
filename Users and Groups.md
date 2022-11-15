@@ -24,8 +24,9 @@ To view password settings for user John.
 To set password options for John.
 ``chage john``
 
-You can also view the passwd options in /etc/shadow. You can see if the user account is locked out. The second field is the password hash. If the password hash starts with **!** The user account is locked out. 
+You can also view the passwd options in /etc/shadow. You can see if the user account is locked out. The second field is the password hash. If the password hash starts with **!** The user account is locked out.
 \
+![The shadow file](pictures/shadow.png)
 \
 If you want to transfer a password from another server to the next one, simply copy the password hash in /etc/shadow from the server with the correct password and paste it into field number 2.
 \
