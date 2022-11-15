@@ -39,16 +39,13 @@ To lock a user account.
 \
 To unlock an account.
 ``usermod -U john``
-\
-\
+
 See previous logged in users.
 ``last``
-\
-\
+
 See currently logged in users.
 ``w`` or ``who``.
-\
-\
+
 To edit /etc/passwd use ``vipw``. Do not edit the file directly.
 
 **/etc/profile**: Used for default settings for all users when starting a login shell
