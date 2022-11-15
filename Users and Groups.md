@@ -50,13 +50,13 @@ See currently logged in users.
 \
 \
 To edit /etc/passwd use ``vipw``. Do not edit the file directly.
-\
+
 **/etc/profile**: Used for default settings for all users when starting a login shell
-\
+
 **/etc/bashrc**: Used to define defaults for all users when starting a subshell
-\
+
 **~/.profile**: Specific settings for one user applied when starting a login shell
-\
+
 **~/.bashrc**: Specific settings for one user applied when starting a subshell
 
 ## Groups
