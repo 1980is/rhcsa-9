@@ -1,5 +1,8 @@
 # File Management
 
+``chgrp`` changes the group. E.g., chgrp documents aslaug.
+
+
 ## ACL
 
 ACL's are not a part of the RHCSA 9 but I still wrote down information about it.
