@@ -1,33 +1,39 @@
 # File Management
 
-``chgrp`` changes the group. E.g., chgrp documents aslaug.
+## Basic file and folder permsission.
 
+Linux applies permissions in the following order.
+
+1. Owner.
+2. Group.
+3. Others.
+
+If you are the owner, Linux doesn't check the group or other permissions.
 
 ## ACL
 
-ACL's are not a part of the RHCSA 9 but I still wrote down information about it.
+*ACL's are not a part of the RHCSA 9 but I still wrote down information about it.*
 
--   There are two types of ACL. 
-    
-    -   The normal ACL. 
-        
-    -   The default ACL. 
-        
--   To create an ACL list you use the command setfacl. 
-    
--   setfacl -R -m g:sales:rx filename 
-    
--   Setfacl -m d:g:profs:rx foldername/ 
-    
-    -   This sets the group profs as a default group that can read and execute all files creating in foldername in the future. 
-        
--   If fileacl not supported message appears, there is something wrong in the filesystem. 
-    
+There are two types of ACL.    
+-   The normal ACL. 
+-   The default ACL. 
 
--   getfacl foldername     
-    
+To create an ACL list you use the command ``setfacl``. 
 
-SUID, SGID, and Sticky Bit 
+``setfacl -R -m g:sales:rx filename``
+``Setfacl -m d:g:profs:rx foldername/``
+
+This sets the group profs as a default group that can read and execute all files creating in foldername in the future.
+
+If fileacl not supported message appears, there is something wrong in the filesystem.
+
+To see the acl.
+
+``getfacl foldername``
+
+---
+
+## SUID, SGID, and Sticky Bit 
 
 -   chmod to set SUID, SGID, and Sticky Bit. 
     
