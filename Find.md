@@ -10,7 +10,11 @@
 
 ## Folder or file 
 
--   find ~ -type d -name "Music" 
+``find ~ -type d -name "Music"``
+This finds a directory named "Music".
+
+``find / -name linux.conf``
+This searches everything for a file named "linux.conf".
    
 ---
 
