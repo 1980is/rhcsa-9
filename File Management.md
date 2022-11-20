@@ -1,5 +1,7 @@
 # File Management
 
+---
+
 ## Basic file and folder permsission.
 
 Linux applies permissions in the following order.

@@ -1,5 +1,7 @@
 # Find
 
+---
+
 ## By size 
 
 -   find / -type f -size +100M 
