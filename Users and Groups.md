@@ -1,7 +1,5 @@
 # Users and Groups
 
----
-
 ## Users 
 
 ### Adding users
@@ -15,8 +13,6 @@ Alternatively, write default settings to **/etc/login.defs**. This is the main s
 Changing this will not affect previously created users, only users that will be created in the future.
 
 Files in **/etc/skel** are copied to the user home directory upon creation. If we want to send a message, scripts, etc. We can use **/etc/skel**.
-
----
 
 ## Managing users
 
@@ -61,8 +57,6 @@ See currently logged in users.
 
 **~/.bashrc**: Specific settings for one user applied when starting a subshell.
 
----
-
 ## Groups
 
 To create a new group. ``groupadd groupname``
@@ -75,8 +69,6 @@ You can use ``newgrp sales`` to change the primary group to sales. This is only 
 
 Use ``vigr`` to change the **/etc/groups** file.  
 
----
-
 ## SUDO 
 
 To have sudo rights the user needs to be a part of the wheel group.
@@ -88,5 +80,3 @@ To see current members of the wheel group.
 Let's add John to the wheel group. ``usermod -aG wheel john``
 
 Let's remove John from the wheel group. ``gpasswd -d john wheel``
-
----

@@ -1,7 +1,5 @@
 # Storage
 
----
-
 ## General notes
 
 ### Deleting partitions
@@ -11,8 +9,6 @@ Select **no**, otherwise you will delete all data on the partition.
 ### Listing devices
 To see disks and partitions. ``lsblk``
 If for some reason you don't think that is correct you can ``cat /proc/partitions``
-
----
 
 ## Mount
 
@@ -34,8 +30,6 @@ To set a label on an XFS filesystem you can use ``xfs_admin -L mygreatlabel /dev
 
 If you want to mount it based on UUID, you can find the UUID with ``blkid``.
 
----
-
 ## Swap
 
 1. Create the parition. Partitions types are important on the exam. In Fdisk remember to set the type to swap.
@@ -46,6 +40,3 @@ If you want to mount it based on UUID, you can find the UUID with ``blkid``.
 6. Check out the new swap space ``free -h``
 
 If you have multiple swap files you can see the priority with ``swapon -s``
-
----
-

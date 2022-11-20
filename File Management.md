@@ -1,7 +1,5 @@
 # File Management
 
----
-
 ## Basic file and folder permsission.
 
 Linux applies permissions in the following order.
@@ -32,8 +30,6 @@ If fileacl not supported message appears, there is something wrong in the filesy
 To see the acl.
 
 ``getfacl foldername``
-
----
 
 ## SUID, SGID, and Sticky Bit 
 
@@ -84,8 +80,6 @@ You can also set it by using the bits. ``chmod 1775 ``
 To see if the Sticky Bit is set the permission has a **t** at the end. 
 ``-rw-r--r-t``
 
----
-
 ## Change ownership
 
 ``chown john:john alamo``
@@ -112,8 +106,6 @@ This is known as the absolute mode. There is a relative mode that you can use. L
 
 ``chmod +x myfile``
 
----
-
 ## UMASK
 
 Type in ``umask`` to see the default umask. Unless you have changed it, it should be "0022". The umask is used to assign default permission for new files and directories.
@@ -128,5 +120,3 @@ To calculate the permission bits for a new file or directory, we subtract the um
 The umask value can be found and configured in the following location.
 -   /etc/profile System-wide default variables are stored.
 -   /etc/bash.bashrc Default shell configuration files are stored
-
----
