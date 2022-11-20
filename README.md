@@ -20,6 +20,7 @@ I will continually keep adding to the table of contents and to the files listed 
 - [Random notes](https://github.com/1980is/rhcsa-9/blob/main/Random%20Notes.md)
 - [Software management](https://github.com/1980is/rhcsa-9/blob/main/Software%20management.md)
 - [Storage](https://github.com/1980is/rhcsa-9/blob/main/Storage.md)
+- [Systemd](https://github.com/1980is/rhcsa-9/blob/main/Systemd.md)
 - [Tar](https://github.com/1980is/rhcsa-9/blob/main/Tar.md)
 - [Users and groups](https://github.com/1980is/rhcsa-9/blob/main/Users%20and%20Groups.md)
 
