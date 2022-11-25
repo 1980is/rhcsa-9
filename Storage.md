@@ -32,6 +32,8 @@ If you want to mount it based on UUID, you can find the UUID with ``blkid``.
 
 ## Swap
 
+### Swap from partition
+
 1. Create the parition. Partitions types are important on the exam. In Fdisk remember to set the type to swap.
 2. Set up a Linux swap area on the device or file we created. ``mkswap /dev/vdd1`` You could also do ``mkswap -L myswapspace /dev/vdd1`` and use the label to mount it in fstab.
 3. Mount the swap space in "/etc/fstab". In the first field you can use /dev/vdd1 or the UUID, or the label if you created one. ![mkswap](pictures/mkswap.png)
@@ -40,3 +42,11 @@ If you want to mount it based on UUID, you can find the UUID with ``blkid``.
 6. Check out the new swap space ``free -h``
 
 If you have multiple swap files you can see the priority with ``swapon -s``
+
+### Swap from file
+
+1. sudo dd if=/dev/zero of=/swap count=2048 bs=1MiB
+2. chmod 600 /swap
+3. mkswap /swap
+4. swapon /swap
+5. fstab: /swap swap swap defaults 0 0
