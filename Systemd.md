@@ -56,3 +56,18 @@ Then we need to restart the journal service.
 ``systemctl restart systemd-journal-flush.service``
 
 
+## Working with Tuned
+
+Install tuned. ``dnf install tuned``
+
+To see available commands, type this in and press double tab. ``tuned-adm`` 
+
+To see available profiles. ``tune-adm list``
+
+Config files for Tuned are located in "/usr/lib/tuned/".
+
+
+
+
+
+
