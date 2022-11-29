@@ -24,4 +24,4 @@ This displays only section 5 for passwd. 
 
 ## Other 
 
--   A third source of information consists of files that are sometimes copied to the /usr/share/doc directory.
+A third source of information consists of files that are sometimes copied to the /usr/share/doc directory.
