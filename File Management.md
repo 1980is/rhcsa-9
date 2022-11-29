@@ -2,13 +2,19 @@
 
 ## Basic file and folder permsission.
 
+When you do an ``ls -l``. The first identifier tells us what kind of file type it is.
+
+![file-type-identifier](pictures/file-type-list.png)
+
+![Types of files](pictures/file-type.png)
+
 Linux applies permissions in the following order.
 
 1. Owner.
 2. Group.
 3. Others.
 
-If you are the owner, Linux doesn't check the group or other permissions.
+If you are the owner, Linux doesn't check the group or other permissions. So if you have read only permission and you are a part of the group that has read & write permission, you only have read permission. **The permissions are applied from left to right**.
 
 ## ACL
 
@@ -47,7 +53,11 @@ You can also set it by using the bits. ``chmod 4775 filename``
 To see if the SUID bit is set the permissions is an **s** in the user section.
 Looks like this: -rw**s**r--r--
 
-To remove suid, ``chmod u-s filename``
+If it's a lower case "s", then both the execute bit and the SUID bit are set. If it's and upper case, only the SUID bit is set.
+
+![Uppercase S in SUID](pictures/suid-capital-s.png)
+
+To remove suid, ``chmod u-s filename`` or ``chmod 0664 filename`` where the 0 is the removes the special bit.
 
 **SGID = 2**
 
@@ -60,17 +70,19 @@ You can also set it by using the bits. ``chmod 2775 foldername/``
 To verify that group id is set for a folder, there is an s in the group sections.
 drwxrw**s**r-x.
 
-To remove guid, ``chmod g-s foldername/``
+If it's a lower case "s", then both the execute bit and the GID bit are set. If it's and upper case, only the GID bit is set.
 
-If the group has rwx on the directory, that means that any member of the that owns the directory can delete files within that folder. We might not want Melinda to be able to delete files that John creates. That's where sticky bit comes in.
+To remove GID, ``chmod g-s foldername/``
+
+If the group has rwx on the directory, that means that any member of the that owns the directory **can delete files** within that folder. We might not want Melinda to be able to delete files that John creates. *That's where the sticky bit comes in*.
 
 **STICKY = 1** 
 
 *Sticky bit has no meaning on files but it does have meaning on directories*. 
 
-It makes it so that that delete only works if the **owner** deletes it. Read about this problem under the SGID = 2 section. To check who is the owner of the current directory, ``ls -ld .`` You can also see it with the classic ``ls -la`` and it will be the first item listed. As you can see in the picture, the user armann and the group armann is the owner of the current directory. You can also see that the **SUID** bit is set for the file "armando". The **GID** is also set for the folder "test".
+The Sticky bit makes it so that delete only works if the **owner** deletes the file. Read about this problem under the SGID = 2 section. To check who is the owner of the current directory, ``ls -ld .`` You can also see it with the classic ``ls -la`` and it will be the first item listed. As you can see in the picture, the user armann and the group armann is the owner of the Goonies directory. You can also see that the Sticky bit is set for that directory.
 
-![Directory owner](pictures/directory-owner.png)
+![Directory owner](pictures/sticky-bit.png)
 
 
 This applies a sticky bit to all filed in the current directory.
@@ -79,6 +91,7 @@ You can also set it by using the bits. ``chmod 1775 ``
 
 To see if the Sticky Bit is set the permission has a **t** at the end. 
 ``-rw-r--r-t``
+If it's a lower case "t", then both the execute bit for "others" and the Sticky bit are set. If it's and upper case T, only the Sticky bit is set, "others" does not have executable rights.
 
 ## Change ownership
 

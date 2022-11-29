@@ -15,6 +15,8 @@ I will continually keep adding to the table of contents and to the files listed 
 - [The exam objectives](https://github.com/1980is/rhcsa-9/blob/main/RHCSA%209%20Exam%20Objectives.md)
 - [File management](https://github.com/1980is/rhcsa-9/blob/main/File%20Management.md)
 - [Find](https://github.com/1980is/rhcsa-9/blob/main/Find.md)
+- [LVM](https://github.com/1980is/rhcsa-9/blob/main/LVM.md)
+- [Man Pages](https://github.com/1980is/rhcsa-9/blob/main/Man%20Pages.md)
 - [Networking](https://github.com/1980is/rhcsa-9/blob/main/Networking.md)
 - [Processes](https://github.com/1980is/rhcsa-9/blob/main/Processes.md)
 - [Random notes](https://github.com/1980is/rhcsa-9/blob/main/Random%20Notes.md)
