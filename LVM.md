@@ -7,6 +7,12 @@ Let's start by scanning the scsi bus. This should discover any newly added disks
 
 ``for D in $(ls /sys/class/scsi_host/) ; do echo "- - -" > /sys/class/scsi_host/$D/scan ; done``
 
+If that does not work you can do this.
+
+``ls /sys/class/scsi_device/``
+For everything listed do the following, **edit the numbers** to reflect what's listed on your server.
+``echo 1 > /sys/class/scsi_device/0\:0\:0\:0/device/rescan``
+
 ### Step 2
 Let's add the disk to the physical volume group.
 ``pvcreate /dev/vdb``
@@ -55,7 +61,7 @@ Let's add 2GB to the 10GB "vdc" disk, and then expand the "vdc4" partition using
 
 ``fdisk /dev/vdc``
 
-Press "p" to print out the partition tables. Let's expand the last primary partition, "vdc4". Let's check the free unpartitioned space by pressing "F". If you are using an old version of fdisk, "F" will not be an option.
+Press "p" to print out the partition tables. Let's expand the last primary partition, "vdc4". Let's **check the free unpartitioned space** by pressing "F". If you are using an old version of fdisk, "F" will not be an option.
 
 Here is the scary part, **we must delete the partition and recreate it** using the new size that we want. As you can see the vdc4 partition is 2G in size. Let's add 2GB to it and make it 4GB.
 

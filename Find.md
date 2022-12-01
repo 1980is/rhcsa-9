@@ -30,6 +30,6 @@ Find all files under "/etc" named hosts and copy them to "/tmp".
 
 Find all files that have been modified in the last minute in the "dev" directory.
 
-``find /dev/ --mmin -1``
+``find /dev/ -mmin -1``
 
 ``
