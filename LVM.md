@@ -7,11 +7,15 @@ Let's start by scanning the scsi bus. This should discover any newly added disks
 
 ``for D in $(ls /sys/class/scsi_host/) ; do echo "- - -" > /sys/class/scsi_host/$D/scan ; done``
 
+Then run ``partprobe``
+
 If that does not work you can do this.
 
 ``ls /sys/class/scsi_device/``
 For everything listed do the following, **edit the numbers** to reflect what's listed on your server.
 ``echo 1 > /sys/class/scsi_device/0\:0\:0\:0/device/rescan``
+
+Then run ``partprobe``
 
 ### Step 2
 Let's add the disk to the physical volume group.
