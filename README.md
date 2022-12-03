@@ -13,7 +13,8 @@ I will continually keep adding to the table of contents and to the files listed 
 ## Table of Contents
 
 - [The exam objectives](https://github.com/1980is/rhcsa-9/blob/main/RHCSA%209%20Exam%20Objectives.md)
-- [File management](https://github.com/1980is/rhcsa-9/blob/main/File%20Management.md)
+- [Compare and manipulate file content](https://github.com/1980is/rhcsa-9/blob/main/Compare%20and%20manipulate%20file%20content.md)
+- [File and Folder permissions](https://github.com/1980is/rhcsa-9/blob/main/File%20and%20Folder permissions.md)
 - [Find](https://github.com/1980is/rhcsa-9/blob/main/Find.md)
 - [LVM](https://github.com/1980is/rhcsa-9/blob/main/LVM.md)
 - [Man Pages](https://github.com/1980is/rhcsa-9/blob/main/Man%20Pages.md)

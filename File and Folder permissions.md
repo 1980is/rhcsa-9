@@ -1,6 +1,6 @@
 # File Management
 
-## Basic file and folder permsission.
+## File and Folder permissions.
 
 When you do an ``ls -l``. The first identifier tells us what kind of file type it is.
 
