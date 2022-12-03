@@ -50,7 +50,7 @@ This searches the regtext file for anything beginning with b and ends with t. 
 
 ``grep 'b.t' regtext``  
 
-If we do grep 'b.\*t' regtext. The * functions as a repitition operator. 
+If we do ``grep 'b.\*t' sometextfile``. The * functions as a repitition operator.
 
 We use \\ to escape special characters so that Bash doesn't interpret them.
 Let's say we want to find all periods in "/etc/login.defs". If we did ``grep "." /etc/login.defs`` grep would return the whole document since the period operator functions as "match any one character" as we can see below. We would fix this by escaping the period.
