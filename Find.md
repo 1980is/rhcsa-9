@@ -26,8 +26,21 @@ Find files with exactly 664 permissions.
 Find files with at least 664 permissions.
 ``find -perm -664``
 
+Find files where the "owner" has at least execute permissions.
+``find -perm -100``
+
+Find files where "others" don't have read permission.
+``find \! -perm -o=r``
+
+Find files where at least "owner", "group" and "others" had read permissions.
+``find -perm /u=r,g=r,o=r``
+
 Find files with any of these permissions.
 ``find -perm /664``
+
+Find files where the "group" has at least write permission and "others" don't have read and write access.
+
+``sudo find /var/log/ -perm -g=w ! -perm /o=rw``
 
 ## By size 
 
@@ -79,4 +92,3 @@ Modification time reflects when something is created or edited.
 Change time reflects changed Metadata. For example if someone changes the permission. We can find that information with the following command. This finds all changed metadata within the last 5 minutes in the Documents directory.
 
 ``find Documents/ -cmin -5``
-
