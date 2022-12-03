@@ -43,3 +43,12 @@ You can see the same Inode number, "7677212". After the permissions you see the 
 You can edit either file and both will change, you can also delete "turtles" and it will have no effect on "hardlink-turtles". 
 
 ![The Stat command](pictures/stat-command.png)
+
+## Tar
+
+Create an archive and compress it using gzip compression.
+``tar -czf /home/armando/backup.tgz /etc``
+
+To use different compression algorithms. Switch out "z" from the above command with either option.
+- j = bzip2
+- J = xz

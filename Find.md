@@ -45,10 +45,10 @@ Find files where the "group" has at least write permission and "others" don't ha
 ## By size 
 
 The following options exist for size.
-1. Bytes = c
-2. Kilobytes = k
-3. Megabytes = M
-4. Gigabytes = G
+- Bytes = c
+- Kilobytes = k
+- Megabytes = M
+- Gigabytes = G
 
 Find files that are larger than 100M.
 ``find / -type f -size +100M``
@@ -78,6 +78,7 @@ Find all files under "/etc" named hosts and copy them to "/tmp".
 Find all files that have been modified in the last five minutes in the "dev" directory. Think about "mm" as "modified minute". The latter command finds everything that was modified **more** than five minutes ago.
 
 ``find /dev/ -mmin -5``
+
 ``find /dev/ -mmin +5``
 
 To search for modified files in 24 hour blocks. This command finds all files modified in my "Documents" directory in the last 24 hours. 0 stands for the last 24 hours. 1 stands for between 24-48 hours and so on.
