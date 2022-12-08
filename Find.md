@@ -16,7 +16,7 @@ Use -o as an "or" operator to find either stallone or brucewillis.
 
 To find everything except something. Let's search for everything excepts something that starts with an "f".
 
-find -not -name "f*"
+``find -not -name "f*"``
 
 ## Search for by permissions
 
