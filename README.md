@@ -14,11 +14,13 @@ I will continually keep adding to the table of contents and to the files listed 
 
 ## Table of Contents
 
+- [Boot Procedure](https://github.com/1980is/rhcsa-9/blob/main/Boot%20Procedure.md)
 - [Compare and manipulate file content](https://github.com/1980is/rhcsa-9/blob/main/Compare%20and%20manipulate%20file%20content.md)
 - [File and Folder permissions](https://github.com/1980is/rhcsa-9/blob/main/File%20and%20Folder%20permissions.md)
 - [Find](https://github.com/1980is/rhcsa-9/blob/main/Find.md)
 - [LVM](https://github.com/1980is/rhcsa-9/blob/main/LVM.md)
 - [Man Pages](https://github.com/1980is/rhcsa-9/blob/main/Man%20Pages.md)
+- [NFS and Autofs (Automount)](https://github.com/1980is/rhcsa-9/blob/main/NFS%20and%20Autofs.md)
 - [Networking](https://github.com/1980is/rhcsa-9/blob/main/Networking.md)
 - [Processes](https://github.com/1980is/rhcsa-9/blob/main/Processes.md)
 - [Random notes](https://github.com/1980is/rhcsa-9/blob/main/Random%20Notes.md)
