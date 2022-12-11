@@ -10,9 +10,10 @@ I will continually keep adding to the table of contents and to the files listed 
 
 [The official Red Hat 9.1 Release Notes in pdf format.](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/pdf/9.1_release_notes/red_hat_enterprise_linux-9-9.1_release_notes-en-us.pdf)
 
+[The exam objectives](https://github.com/1980is/rhcsa-9/blob/main/RHCSA%209%20Exam%20Objectives.md)
+
 ## Table of Contents
 
-- [The exam objectives](https://github.com/1980is/rhcsa-9/blob/main/RHCSA%209%20Exam%20Objectives.md)
 - [Compare and manipulate file content](https://github.com/1980is/rhcsa-9/blob/main/Compare%20and%20manipulate%20file%20content.md)
 - [File and Folder permissions](https://github.com/1980is/rhcsa-9/blob/main/File%20and%20Folder%20permissions.md)
 - [Find](https://github.com/1980is/rhcsa-9/blob/main/Find.md)
