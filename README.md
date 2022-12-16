@@ -24,6 +24,7 @@ I will continually keep adding to the table of contents and to the files listed 
 - [Networking](https://github.com/1980is/rhcsa-9/blob/main/Networking.md)
 - [Processes](https://github.com/1980is/rhcsa-9/blob/main/Processes.md)
 - [Random notes](https://github.com/1980is/rhcsa-9/blob/main/Random%20Notes.md)
+- [Reset Root Password](https://github.com/1980is/rhcsa-9/blob/main/Reset%20Root%20Password.md)
 - [SELinux](https://github.com/1980is/rhcsa-9/blob/main/SELinux.md)
 - [Software management](https://github.com/1980is/rhcsa-9/blob/main/Software%20management.md)
 - [Storage](https://github.com/1980is/rhcsa-9/blob/main/Storage.md)
