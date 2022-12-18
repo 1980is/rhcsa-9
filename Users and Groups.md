@@ -65,6 +65,9 @@ To see members of a group. ``groupmems -g sales`` or ``lid -g groupname``. For a
 
 Add John to the group sales. ``usermod -aG sales john``. The new group for the user is applied when they log out and back in. If they don't want to do that and use the new group right away, that's when we use the ``newgrp`` command. Remember to use the ``-a`` option when adding people to groups. If you don't, it will **override** all secondary groups the member is a part of.
 
+Remove user John from the group printers.
+``gpasswd -d john printers``
+
 You can use ``newgrp sales`` to change the primary group to sales. This is only a **temporary** primary group change, when you exit, it's back to your original primary group. Remember that the ``newgrp`` command opens a subshell where the user is a member of the group sales.
 
 Use ``vigr`` to change the **/etc/groups** file.  
