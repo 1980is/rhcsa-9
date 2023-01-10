@@ -98,8 +98,15 @@ To see the image layers.
 ``podman container run --name webserv2 -d -p 9002:80 nginx``
 This runs an nginx container named webserv1 in detached mode on port 9002. To check it out run http://localhost:9002/ in your browser.
 
+Create a container running MariaDB.
+``podman run --detach --network podman --name some-mariadb --env MARIADB_USER=example-user --env MARIADB_PASSWORD=my_cool_secret --env MARIADB_ROOT_PASSWORD=my-secret-pw  mariadb:latest``
+
 ### Connect to container
-To connect with fedora-v1 ``podman attach fedora-v1`` 
+Connect to fedora-v1. 
+``podman attach fedora-v1`` 
+
+Connect to MariaDB container named some-mariadb.
+``podman exec -it some-mariadb mariadb -uroot -pmy-secret-pw``
 
 ### Detach from container
 Press detach key sequence "**ctrl-p, ctrl-q**"

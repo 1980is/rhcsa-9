@@ -7,7 +7,9 @@
 ``dnf search htop``
 ``dnf search all htop``
 ``dnf update`` The same as ``dnf upgrade``. The "update" is an alias for "upgrade".
+``dnf group install`` Only mandatory and default packages are installed, to see optional packages use ``dnf group info`` and to install with all optional packages do ``dnf group install --with-optional``
 ``dnf group list`` See group packages that you can install.
+``dnf group list hidden`` Some groups are normally only installed through environment groups and not seperately, and for that reason don't show when using ``dnf group list``
 
 ### History
 ``dnf history``
@@ -68,4 +70,8 @@ We should see baseos and appstream and no errors.
 
 **BaseOS repo** is for packages that don't change during the lifecycle of the OS. The **AppStream repo** is for packages that do change major versions during the lifecycle period of the Os.
 
-## DNF 
+## Subscription
+
+To see all the software you are entitled to use with the subscription attached to the machine.
+
+``rct cat-cert /etc/pki/entitlement/5715597599610761455.pem``

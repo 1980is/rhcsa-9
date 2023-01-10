@@ -12,12 +12,6 @@ If you don't specify a directory, it searches the working directory.
 
 Use -o as an "or" operator to find either stallone or brucewillis.
 
-### Don't find something
-
-To find everything except something. Let's search for everything excepts something that starts with an "f".
-
-``find -not -name "f*"``
-
 ## Search for by permissions
 
 Find files with exactly 664 permissions.

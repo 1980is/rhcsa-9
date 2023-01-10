@@ -127,3 +127,90 @@ Mount the filesystem. Change /tmp/var for whatever you are using.
 Mount it using /etc/fstab if you want the mount to survive a reboot. In /etc/fstab, this would mount the lv_var in the /tmp/var directory.
 
 ``/dev/opt/lv_var	/tmp/var				xfs	defaults	0 0``
+
+## GPT Disks
+
+### Step 1
+
+If you need to verify that you are using gpt, ``fdisk -l`` 
+You should see, "Disk label type: gpt"
+If you see Dos, use another method then this one.
+
+Increase disk size in virtual host.
+
+Let's start by scanning the scsi bus. This should discover any increased disk size without rebooting. 
+
+``for D in $(ls /sys/class/scsi_host/) ; do echo "- - -" > /sys/class/scsi_host/$D/scan ; done``
+
+Then run ``partprobe``
+
+If that does not work you can do this.
+
+``ls /sys/class/scsi_device/``
+For everything listed do the following, **edit the numbers** to reflect what's listed on your server.
+``echo 1 > /sys/class/scsi_device/0\:0\:0\:0/device/rescan``
+
+Then run ``partprobe``
+
+### Step 2
+
+``gdisk -l /dev/vda`` 
+Change out vda for your disk.
+
+"Total free space is ..." should list the free space.
+
+### Step 3 
+
+``gdisk /dev/vda``
+
+Press "p" to print out your partition table. Take note of Start (sector) and the End (sector) for the partition you want to expand.
+
+Next, press "i", this will print out your "Partition unique GUID".
+You need to use it later so print it out now.
+
+Next we need to delete the partition. Press "d" and select the partition you want to expand.
+
+Then press "n" and create a new partition.
+
+Check to see if the "First sector" matches the "First sector" you saw when you printed out the partition tables. It should by default be fine, press Enter.
+
+The "Last sector" should be different, a higher number than before. Compare it to the "Last Sector" when you printed out the partition tables. If you want to use all of the free space available just press enter. If you want to increase it by a specific amount type in +2GB or whatever you need.
+
+Then it asks you about the filesystem type. Something like this:
+
+Current type is 'Linux filesystem'
+Hex code or GUID (L to show codes, Enter = 8300):
+
+We need to set it to LVM so press "L".
+Type in 8e00, you might need to do it twice.
+
+Press "p" and verify that the partition size has increased.
+
+Now press "x" to enter the "expert mode".
+
+Press "c" to set the GUID to the old value.
+Copy and paste in the old GUID.
+
+Next press "w", it will say, "Final checks complete. About to write GPT data. THIS WILL OVERWRITE EXISTING PARTITIONS!!"
+
+Press "Y".
+
+### Step 4
+
+Run ``partprobe`` 
+Run ``lsblk`` and you should see the increased size. 
+/dev/vda3 was increased by 10GiB.
+
+![partprobe](pictures/gpt1.png)
+
+### Step 5
+
+Last step is to increase the size in LVM.
+
+``pvresize /dev/vda3``
+``pvs`` To see the "PFree". In my case it was 10GiB.
+
+``lvresize -r -l +100%FREE /dev/centos/root``
+Make sure to use the your vg and lv names.
+
+``df -Th`` Verify that you lvm has increased by the size you wanted.

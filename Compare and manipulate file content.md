@@ -136,6 +136,7 @@ How to remove duplicate lines when using sort.
 ## AWK
 
 ``awk -F : '/linda/ { print $4 }' /etc/passwd``
+This searches for lines with /linda/ and prints out field number 4.
 
 ``ps aux | awk '{print $NF }'``
 
