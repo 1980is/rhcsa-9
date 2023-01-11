@@ -35,11 +35,20 @@ Location of custom systemd units is "/etc/systemd/system". This command reloads 
 ``systemctl edit sshd.service``
 By default it uses Nano. To change that to Vim.
 ``export SYSTEMD_EDITOR=/usr/bin/vim``
-This creates a drop in file in "/etc/systemd/system/"
+This creates a drop-in-file in "/etc/systemd/system/"
+If it does not create the drop-in-file automatically, do ``systemctl daemon-reload``
+
+To see tunables for a service do ``systemctl show httpd.service``
 
 /user/lib/systemd/system/ is for configuration files provided by packages.
+Do not edit those directly since they can be overwritten by newer packages.
 
 /etc/tuned/ and /usr/lib/tuned/ need an explanation for it here.
+
+**Mask**
+To prevent certain units from starting up, use ``systemctl mask``. It links a unit to the /dev/null device, which ensures it cannot be started. For instance ``systemctl mask nginx``
+
+``systemctl unmask`` removes the unit mask.
 
 ## Systemd Journal
 
@@ -54,6 +63,16 @@ The setting "Storage=auto" ensures that persistent storage is happening automati
 
 Then we need to restart the journal service.
 ``systemctl restart systemd-journal-flush.service``
+
+## Systemd Timers (Scheduling)
+
+When using systemd timers, the timer should be started, and **not** the service unit.
+
+``systemctl list-units -t timer``
+``systemctl list-unit-files dnf-makecache*``
+``systemctl status dnf-makecache.timer``
+Check out the "Trigger and Triggers".
+
 
 
 ## Working with Tuned
