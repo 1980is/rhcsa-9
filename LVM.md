@@ -214,3 +214,13 @@ Last step is to increase the size in LVM.
 Make sure to use the your vg and lv names.
 
 ``df -Th`` Verify that you lvm has increased by the size you wanted.
+
+### Debug
+
+If you get this error.
+Warning: Not all of the space available to /dev/sda appears to be used, you can
+fix the GPT to use all of the space (an extra 10485760 blocks) or continue with
+the current setting?
+Fix/Ignore?
+
+This is fixed with ``parted -l``
