@@ -45,5 +45,3 @@ Once we are done and we want to get back to the GUI we issue``systemctl set-defa
 
 Add this the end of the linux line. ``systemd.unit=emergency.target`` You can use any of the targets I listed before instead of emergency.
 
-TEST!
-
