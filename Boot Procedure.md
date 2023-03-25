@@ -45,3 +45,11 @@ Once we are done and we want to get back to the GUI we issue``systemctl set-defa
 
 Add this the end of the linux line. ``systemd.unit=emergency.target`` You can use any of the targets I listed before instead of emergency.
 
+## Debug Shell
+
+How to use early boot debug shell:
+1. systemctl enable --now debug-shell.service
+2. During boot you can access the virtual terminal on TTY9. (Ctrl-Alt-F9)
+3. Enter a root shell without entering a password
+4. When you have finished using it you should disable the service right away.
+``systemctl disable --now debug-shell.service ``

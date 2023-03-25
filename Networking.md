@@ -67,8 +67,11 @@ You have to take the connection down and then up (``nmcli con down NAME; nmcli c
 ``ip link set ens33 up``
 
 ### Changing the MTU for e.g., iSCSI
-- ``nmcli con mod ensp92 802-3-ethernet.mtu 9000``
+``nmcli con mod ensp92 802-3-ethernet.mtu 9000``
 
 ## Debug
 
-Use ``nm-connection-editor`` if you have issues with certs for you network cards.
+- Use ``nm-connection-editor`` if you have issues with certs for you network cards.
+- Make sure your subnet mask is correct.
+- Ping your gateway to see if you can reach the router.
+- DNS not working, check "/etc/resolv.conf" to make sure it's correct.
