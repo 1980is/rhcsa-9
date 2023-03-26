@@ -1,10 +1,19 @@
 # SELinux
 
-## General commands
+Selinux state is either enabled or disabled. You must reboot to switch between the two.
+Enabled has two modes, permissive or enforcing.
 
-``getenforce`` too see the status of SELinux.
+If you want to temporarily disable SELinux to debug or analyze something you should
+change the SELinux state while booting by using a kernel parameter.
 
-``setenforce`` to enable or disable SELinux. A reboot is required if you disable it.
+- enforcing=0 will start SELinux in permissive mode. 
+- enforcing=1 will start SELinux in enforcing mode.
+- selinux=0 will disable SELinux.
+
+``getenforce`` to see the status of SELinux.
+
+``setenforce`` to switch between modes, permissive or enforcing. This is temporary, it will go back
+to whatever is defined in "/etc/selinux/config" after the server is rebooted.
 
 ``ps Zaux``
 
@@ -12,19 +21,24 @@
 
 ### Context
 
+Remember to look at `` man semanage-fcontext`` during the exam. At the bottom you have examples you can use.
+
 When files are created in a directory, they typically inherit the context of the parent directory and most services don't need additional SELinux configuration if default settings are used.
 
 When files are copied, they typically inherit the context of the parent directory. If it's not relabeled correctly you can use ``restorecon -Rv /mydirectory`` 
 
-Use ``semanage fcontext`` to set the file context label. This will write the context to the SELinux Policy but **it is not written yet to the filesystem**. A second step is necessary to write it to the filesystem. Use ``semanage fcontext -a`` to set a new context label.
+Use ``semanage fcontext`` to set the file context label. This will write the context to the SELinux Policy, but **it is not written yet to the filesystem**.
+A second step is necessary to write it to the filesystem by using ``restorecon``
+
+Instead of using ``restorecon`` you can use ``touch /.autorelabel`` to relabel all files to the context that is specified in the policy. That should be our last option, it happens while rebooting.
+So ``restorecon`` is preferred.
+
+
+Use ``semanage fcontext -a`` to set a new context label.
 
 Use ``semanage fcontext -m`` to modify an existing context label.
 
-Remember, **you must enforce the policy** setting on the file system by using ``restorecon``
-
-Alternatively, use ``touch /.autorelabel`` to relabel all files to the context that is specified in the policy. That should be our last option, it happens while rebooting.
-
-See ``man semanage-fcontect`` for documentation.
+**Important for the exam!** See ``man semanage-fcontect`` for documentation.
 
 If you apply non-default configuration, check the default configuration context setting but if that's not available install the man pages with  ``dnf install selinux-policy-doc`` and then ``man -k _selinux | grep http`` as an example.
 
