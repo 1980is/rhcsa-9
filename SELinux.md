@@ -34,7 +34,7 @@ Instead of using ``restorecon`` you can use ``touch /.autorelabel`` to relabel a
 So ``restorecon`` is preferred.
 
 
-Use ``semanage fcontext -a`` to set a new context label.
+Use ``semanage fcontext -a`` to set a new context label. If you get an error that it already exists. Use the -m option.
 
 Use ``semanage fcontext -m`` to modify an existing context label.
 
@@ -70,6 +70,8 @@ To see all booleans that have a non-default setting ``semanage boolean -l -C``
 
 An example to learn from. ``getsebool -a | grep ftp``
 
+To set booleans, use ``setsebool -P boolean [on|off]``
+
 ### Networking
 
 Network ports are also provided with an SELinux context label. The SELinux policy is configured to allow default port access. For any non-default port access, use ``semanage-port`` to apply the right label to the port.
@@ -78,6 +80,9 @@ Use the examples section in man ``semanage-port`` for examples.
 
 ### Debug
 
-Check to see if SEAlert is installed. ``dnf provides */sealert``
-
-``journalctl | grep sealert``
+- Check to see if SEAlert is installed. ``dnf provides */sealert``
+  - ``journalctl | grep sealert``
+  - Find what you are looking for and run the the command it shows you, e.g., `` sealert -l 59cd7b4c-2b08-4bfc-8c15-4369f46c7355``
+- Check the audit log for AVC errors. It's the most important source to debug SELinux problems.
+  - ``grep AVC /var/log/audit/audit.log``
+- 
