@@ -14,7 +14,7 @@ I will continually keep adding to the table of contents and to the files listed 
 
 ## Table of Contents
 
-- [Bash Scripting] (https://github.com/1980is/rhcsa-9/blob/main/Bash%20Scripting.md)
+- [Bash Scripting](https://github.com/1980is/rhcsa-9/blob/main/Bash%20Scripting.md)
 - [Boot Procedure](https://github.com/1980is/rhcsa-9/blob/main/Boot%20Procedure.md)
 - [Compare and manipulate file content](https://github.com/1980is/rhcsa-9/blob/main/Compare%20and%20manipulate%20file%20content.md)
 - [Containers](https://github.com/1980is/rhcsa-9/blob/main/Containers.md)
