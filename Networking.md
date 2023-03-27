@@ -54,11 +54,11 @@ Here are a few nmcli examples:
 This only makes the NM aware of the changes. \
 You have to take the connection down and then up (``nmcli con down NAME; nmcli con up NAME``) or most changes can be applied directly with ``nmcli dev reapply NAME``
 
-## Change the gateway
+### Change the gateway
 
 ``nmcli connection modify enp0s3 ipv4.gateway 192.168.1.254``
 
-## Use static instead of DHCP
+### Use static instead of DHCP
 
 ``nmcli connection modify enp0s3 ipv4.method static``
 
@@ -68,6 +68,57 @@ You have to take the connection down and then up (``nmcli con down NAME; nmcli c
 
 ### Changing the MTU for e.g., iSCSI
 ``nmcli con mod ensp92 802-3-ethernet.mtu 9000``
+
+## Firewall (netfilter/nftables)
+
+On the exam it's better to restart services than to reload them.
+
+The netfilter framework in the Linux kernel manages firewall operations, and it forwards specific operations to kernel modules.
+- Packet filtering
+- Network address translation
+- Port forwarding
+
+### Firewalld
+
+Firewalld is a good interface to create and manage a simple firewall but the framework behind it is the Netfilter (nftables) firewall. 
+
+To see config files for services, check out.
+"/usr/lib/firewalld/"
+
+### General commands
+
+``firewall-cmd --list-all``
+
+``firewall-cmd --get-services``
+
+``firewall-cmd --add-service squid --permanent`` \
+Remember to use the permanent switch, otherwise the rule is written only to the runtime and is lost if you restart firewalld or the server!
+
+``firewall-cmd --reload``
+
+### Zones
+
+A zone is a default configuration to which network cards can be assigned to apply specific settings. 
+
+### Service
+
+You only need to know the service part for the RHCSA exam!
+
+### Ports
+
+Optional elements to allow access to specific ports.
+
+## Network Sockets
+
+Use ``ss`` to show socket information. This will show all connections.
+
+``ss -tu`` shows connected TCP and UDP sockets.
+
+``ss -tua`` shows connected TCP and UDP sockets + sockets in a listening state.
+
+``ss -tulpn`` Shows TCP and UDP sockets in a listening state, it also adds process names or PID to the output. 
+
+
 
 ## Debug
 

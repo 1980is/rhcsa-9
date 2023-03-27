@@ -21,7 +21,6 @@ I will continually keep adding to the table of contents and to the files listed 
 - [Crontab](https://github.com/1980is/rhcsa-9/blob/main/Crontab.md)
 - [File and Folder permissions](https://github.com/1980is/rhcsa-9/blob/main/File%20and%20Folder%20permissions.md)
 - [Find](https://github.com/1980is/rhcsa-9/blob/main/Find.md)
-- [Firewall](https://github.com/1980is/rhcsa-9/blob/main/Firewall.md)
 - [LVM](https://github.com/1980is/rhcsa-9/blob/main/LVM.md)
 - [Man Pages](https://github.com/1980is/rhcsa-9/blob/main/Man%20Pages.md)
 - [NFS and Autofs (Automount)](https://github.com/1980is/rhcsa-9/blob/main/NFS%20and%20Autofs.md)
@@ -35,4 +34,5 @@ I will continually keep adding to the table of contents and to the files listed 
 - [Software management](https://github.com/1980is/rhcsa-9/blob/main/Software%20management.md)
 - [Storage](https://github.com/1980is/rhcsa-9/blob/main/Storage.md)
 - [Systemd](https://github.com/1980is/rhcsa-9/blob/main/Systemd.md)
+- [Time Service](https://github.com/1980is/rhcsa-9/blob/main/Time.md)
 - [Users and groups](https://github.com/1980is/rhcsa-9/blob/main/Users%20and%20Groups.md)
