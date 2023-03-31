@@ -6,7 +6,9 @@ First install the container tools.
 
 ## Registries
 
-After the installation we have "/etc/containers". There we have for example, "registries.conf". Here we can set the registries it uses for images. The line is: "unqualified-search-registries =".
+After the installation we have "/etc/containers". There we have for example,
+"registries.conf". Here we can set the registries it uses for images. The line is: "unqualified-search-registries =".
+I recommend adding "quay.io" to the registry list.
 
 Use ``podman login registry.redhat.io`` to login to Red Hat's registry.
 Use ``podman login registry.redhat.io --get-login`` to get your current login credentials.
