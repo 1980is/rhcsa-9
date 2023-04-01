@@ -25,6 +25,18 @@ Manage and inspect images no matter where they are.
 
 To automate container builds. What we want in our container image.
 
+By default you don't have any examples of container files. You can download example
+container files with getting the buildah-tests package.
+
+``dnf install buildah-tests ``
+
+After the installation you can find the container files in multiple subdirectories
+under "/usr/share/buildah/test/system/bud/". You can also search for them ``find / -name Containerfile``
+
+In a container file you need to at least define two things.
+
+- FROM (From where to pull the image.)
+- RUN (How to run the image, with what parameters.)
 
 ## General Commands
 
@@ -182,7 +194,7 @@ Manage them using: \
 1. Create the user, must have a passwd.
    2. ``useradd rambo; passwd rambo``
 2. We need to enable linger for the rambo user.
-   4. ``loginctl enable-linger rambo``
+   4. ``loginctl enable-linger rambo`` Verify with ``loginctl show-user username``
 3. SSH into the server.
    4. ssh ``rambo@localhost``
 4. Create the directory that Podman will write the systemd unit file to.
@@ -251,34 +263,24 @@ Run a container that uses that NFS storage. 
 
 See "Auto-Start Containers" section above.
 
-### Non-root User Mappings
+### Bind Mounting in Rootless Containers
 
 To bind-mount directories for rootless containers find the UID of the user
-that runs the main application with ``podman inspect imagename``
+that runs the main application with ``podman inspect imagename`` or 
+``podman exec containername grep UID /etc/passwd`` if it's already running.
 
 ``podman unshare chown user:grp directoryname`` to set the container UID as the 
-owner of the directory on the host. The directory name **must be** in the user
-home directory because otherwise it wouldn't be a part of the user namespace!
+owner of the directory on the host that will be mounted in the container.
+The directory name **must be in the user home directory** because otherwise
+it wouldn't be a part of the user namespace!
 
 Use ``podman unshare cat /proc/self/uid_map`` to verify mapping.
 
 Verify the mapped user is the owner on the host using ``ls -ld /directoryname``
 
-### Port Mapping
+#### Steps
 
-To set appropriate directory ownership on bind-mounted directories for rootless containers, additional work is required. First, find the UID of the user that runs the main application. You may be able to find this using ``podman inspect imagename`` otherwise use, ``podman exec containername grep username /etc/passwd``
-
-Use ``podman unshare chown nn:nn directoryname to set the container UID as the owner of the directory on the host.``
-
-Notice that directory name **must be in the user home directory** because otherwise it wouldn't be part of the user namespace.
-
-Use ``podman unshare cat /proc/self/uid_map`` to verify mapping.
-
-Verify the mapped user is owner on the host, using ``ls -ld /directoryname``
-
-#### Bind Mounting in Rootless Containers
-
-# FIX THIS MISSING CONTENT
+``podman run -d -p 3206:3206 --name armdb -v /home/student/armdb:/var/lib/mysql:Z -e MYSQL_ROOT_PASSWORD=123456 registry.access.redhat.com/rhscl/mariadb-100-rhel7``
 
 1. Run as non-root user
 2. ``podman run -d --name armann-db -e MYSQL_ROOT_PASSWORD=123456``
