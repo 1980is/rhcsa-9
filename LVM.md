@@ -215,12 +215,24 @@ Make sure to use the your vg and lv names.
 
 ``df -Th`` Verify that you lvm has increased by the size you wanted.
 
+## Create a VG with a different physical extent
+
+The default physical extent size is 4MB. If you want a larger physical extent
+you must do so when you create the VG. Let's say you want a VG names data and
+the physical extent size should be 8MB.
+
+``vgcreate -s 8M data /dev/nvem0n1p2``
+
 ### Debug
 
-If you get this error.
-Warning: Not all of the space available to /dev/sda appears to be used, you can
+1. If you get this error.
+Warning: **Not all of the space available to /dev/sda appears to be used**, you can
 fix the GPT to use all of the space (an extra 10485760 blocks) or continue with
-the current setting?
-Fix/Ignore?
+the current setting? Fix/Ignore?
+   2. This is fixed with ``parted -l``
+2. If you have a machine that has been cloned. You might get this message when you run ``pvs`` **Device files last seen on "device" not found.**
+   4. ``rm /etc/lvm/devices/system.devices``
+   5. ``vgimportdevices -a``
+6. 
 
-This is fixed with ``parted -l``
+
