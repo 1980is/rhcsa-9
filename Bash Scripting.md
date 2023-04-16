@@ -5,6 +5,13 @@ are used to automate routine tasks.
 
 Every shell script starts with the Shebang ``#!`` \
 If you are using the Bash shell the Shebang would be ``#!/bin/bash`` \
+Now "/bin" is no longer an ordinary directory. It is therefore recommended
+to use the following Shebang since it sources your environment and will point you
+to the correct Bash shell.
+
+**#!/usr/bin/env bash**
+
+
 It's a good practice but not mandatory to use the **.sh** extension for shell script files.
 
 ## Helpful Tools
