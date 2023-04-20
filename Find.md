@@ -64,7 +64,7 @@ Find both "bear" and "Bear".
 ## Copy found items
 
 Find all files under "/etc" named hosts and copy them to "/tmp".
-``find /etc/ -name "hosts" -exec cp {} /tmp \\;``
+``find /etc/ -name "hosts" -exec cp {} /tmp \;``
 
 ## By date and time
 
