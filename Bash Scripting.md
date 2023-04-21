@@ -1,5 +1,7 @@
 # Bash Scripting
 
+Check out [Bash Guide For Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
+
 Every bash script is an executable file that runs tasks. Most often shell scripts
 are used to automate routine tasks. 
 
