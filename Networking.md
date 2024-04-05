@@ -48,6 +48,8 @@ Here are a few nmcli examples:
 
 ``nmcli device status`` \
 ``nmcli connection show -active`` \
+If the connection is unmanaged or not connecting, try this command.
+``sudo nmcli connection mod <connection-name> connection.autoconnect yes``
 
 **Activate Changes** \
 ``nmcli connection reload`` \
