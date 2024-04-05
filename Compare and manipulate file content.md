@@ -135,10 +135,19 @@ How to remove duplicate lines when using sort.
 
 ## AWK
 
-``awk -F : '/linda/ { print $4 }' /etc/passwd``
-This searches for lines with /linda/ and prints out field number 4.
+In AWK, the logic is: pattern { action }.
+
+``awk 'NR==1 {print $1}' text.txt``
+Prints out the first field of the first line in text.txt.
+
+``awk -F : '/armann/ { print $4 }' /etc/passwd``
+Searches for lines with /armann/ and prints out field number 4.
+
+``awk '{gsub("Armann Jakob Palsson", "The Armanator"); print}' text.txt > tmp.txt && mv tmp.txt``
+Changes my name, Armann Jakob Palsson to The Armanator.
 
 ``ps aux | awk '{print $NF }'``
+Prints out the last field in each line outputted by ps aux. 
 
 ## SED
 
