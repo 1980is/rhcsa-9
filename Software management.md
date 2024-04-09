@@ -10,6 +10,7 @@
 ``dnf group install`` Only mandatory and default packages are installed, to see optional packages use ``dnf group info`` and to install with all optional packages do ``dnf group install --with-optional`` \
 ``dnf group list`` See group packages that you can install. \
 ``dnf group list hidden`` Some groups are normally only installed through environment groups and not separately, and for that reason don't show when using ``dnf group list``
+``dnf list installed`` List installed software on the machine.
 
 ### History
 ``dnf history``

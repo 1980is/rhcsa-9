@@ -98,6 +98,12 @@ Remember to use the permanent switch, otherwise the rule is written only to the 
 
 ``firewall-cmd --reload``
 
+Add IP address to the trusted zone.
+``firewall-cmd --zone=trusted --add-source=192.168.124.1 --permanent``
+
+List configuration for all zones.
+``firewall-cmd --list-all-zones``
+
 ### Zones
 
 A zone is a default configuration to which network cards can be assigned to apply specific settings. 

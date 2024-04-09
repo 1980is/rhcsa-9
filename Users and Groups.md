@@ -27,6 +27,8 @@ You can also view the password options in **/etc/shadow**. You can see if the us
 
 ![The shadow file](pictures/shadow.png)
 
+You can also see if the account is locked with ``passwd -S armann`` 
+
 If you want to transfer a password from another server to another one, simply copy the password hash in **/etc/shadow** from the server with the correct password and paste it into field number 2. 
 
 To edit **/etc/passwd** use ``vipw``. Do not edit the file directly.
