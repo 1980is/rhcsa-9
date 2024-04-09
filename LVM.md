@@ -112,8 +112,8 @@ Let's create the volume group named "var" using /dev/vdc1.
 
 ### Step 3 ###
 
-Let's create the logical volume group named "lv_var" and use all of the space available from the "var" volume group we just created. 
-``lvcreate -n lv_var -l 100%FREE var``
+Let's create the logical volume group named "lvdata" and use all of the space available from the "var" volume group we just created. 
+``lvcreate -l 100%FREE -n lvdata var``
 
 ### Step 4 ###
 
