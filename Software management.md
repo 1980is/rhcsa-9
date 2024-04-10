@@ -50,6 +50,7 @@ Let's copy the iso file to our computer. Make sure you have around 9GB available
 on the root of your hard disk. ``dd if=/dev/sr0 of=/rhel9.iso bs=1M``
 
 Let's edit "/etc/fstab" so it's mounted automatically for us. You can see the last line, that's how we mount the rhel9.iso automatically after boot.
+
 ![repository](pictures/repo.png)
 
 Let's mount it.  ``mount -a``
