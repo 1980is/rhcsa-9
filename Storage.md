@@ -44,7 +44,7 @@ Type=xfs \
 Options=defaults \
 \
 [Install] \
-WantedBy=multi-user.target \
+WantedBy=multi-user.target
 
 ## Swap
 
