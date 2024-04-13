@@ -32,19 +32,19 @@ If you want to mount it based on UUID, you can find the UUID with ``blkid``.
 
 ### Mount via Systemd
 
-Based on the example below, the mount filename would be mnt-vda6.mount and located in /etc/systemd/system/.
-
-[Unit]
-Description=Mount vda6
-
-[Mount]
-What=UUID="07b6fb67-8687-40d5-81a4-bb58e28e1e0a"
-Where=/mnt/vda6
-Type=xfs
-Options=defaults
-
-[Install]
-WantedBy=multi-user.target
+Based on the example below, the mount filename would be mnt-vda6.mount and located in /etc/systemd/system/. \
+\
+[Unit]\
+Description=Mount vda6 \
+\
+[Mount] \
+What=UUID="07b6fb67-8687-40d5-81a4-bb58e28e1e0a" \
+Where=/mnt/vda6 \
+Type=xfs \
+Options=defaults \
+\
+[Install] \
+WantedBy=multi-user.target \
 
 ## Swap
 
