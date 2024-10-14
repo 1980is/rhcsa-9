@@ -74,6 +74,8 @@ You can use ``newgrp sales`` to change the primary group to sales. This is only 
 
 Use ``vigr`` to change the **/etc/groups** file.  
 
+See all groups `cat /etc/group`
+
 ## SUDO 
 
 To have sudo rights the user needs to be a part of the wheel group.
